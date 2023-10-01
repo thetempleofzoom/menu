@@ -52,10 +52,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'restaurant.urls'
 
+# django will look for template directory in menu app, so to redirect edit 'dirs' entry below
+# this specifies directory under root where we put 'templates'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
