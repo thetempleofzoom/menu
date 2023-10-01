@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>Detail</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <!-- has access to Items model because it was declared in views -->
+        <h2 class="pt-5">{{ items.dish }}</h2>
+        <h3>{{ items.description }}</h3>
+    </div>
+{% endblock content %}

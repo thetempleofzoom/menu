@@ -30,5 +30,5 @@ class Items(models.Model):
     date_updated = models.DateField(auto_now=True)
 
     def __str__(self):
-        return self.meal
+        return self.dish
     

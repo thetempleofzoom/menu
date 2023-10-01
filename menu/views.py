@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
-from .models import Items
+from .models import Items, MEAL_TYPE
 
 # can create class or function (def) views but class requires less code apparently.
 
@@ -12,8 +12,10 @@ class MenuList(generic.ListView):
     template_name = "index.html"
 
     # this name needs to be exactly so as it's a predefined function
-    def get_context_data(self):
-        context = {'meals':'hot cross bun'}
+    def get_context_data(self, **kwargs):
+        #calls dictionary to context. dictionary k,v pairs can be added later
+        context = super().get_context_data(**kwargs)
+        context['dishes'] = MEAL_TYPE
         return context
 
 # detailed view when item clicked (or blog content)
